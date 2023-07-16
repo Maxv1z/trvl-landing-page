@@ -28,6 +28,7 @@ const Content = ({
   reverseContainer,
   textBeforeStyle,
   textStyle,
+  pictureStyle,
 }) => {
   return (
     <>
@@ -53,7 +54,7 @@ const Content = ({
           </div>
         </div>
         <div className={`${side1}`}>
-          <div class="picture">
+          <div class="picture" style={pictureStyle}>
             <img src={image} alt="" />
           </div>
         </div>

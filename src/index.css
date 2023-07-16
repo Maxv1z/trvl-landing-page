@@ -9,7 +9,7 @@
 
 body, html {
 	margin: 0;
-	height: 3000px;
+	height: 100%;
 	background: var(--bg, #0B1D26);
 }
   

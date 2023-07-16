@@ -13,3 +13,10 @@
   right: 0;
   z-index: 2;
 }
+
+.all-content {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 12.5rem;
+  margin: auto 14rem 7.5rem 14rem;
+}

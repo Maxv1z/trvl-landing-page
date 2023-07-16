@@ -2,7 +2,7 @@
   width: 91.375rem;
   height: 45rem;
   color: #fff;
-  margin: 12em 14em auto 14em;
+  // margin: 12em 14em auto 14em;
 
   display: grid;
   grid-gap: 1em;
@@ -11,7 +11,7 @@
   .left {
     margin-top: 8.81em;
 
-    // margin-left: 9em;
+    // margin-left: 12em;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -19,6 +19,10 @@
 
     .text-before {
       position: absolute;
+      left: -0.5em;
+      top: -0.5em;
+      z-index: 2; // Adjust the z-index value as needed to make it overlap
+
       color: #fff;
       font-family: "Gilroy-Medium";
       font-size: 15rem;
@@ -26,8 +30,6 @@
       font-weight: 700;
       line-height: 15rem;
       opacity: 0.1;
-      top: -0.5em;
-      left: -0.5em;
     }
 
     .text-above {

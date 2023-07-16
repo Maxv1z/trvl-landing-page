@@ -1,0 +1,98 @@
+.footer {
+  margin-top: 12.5rem;
+  padding-bottom: 7.5em;
+
+  width: 91.375rem;
+}
+
+.footer-container {
+  max-width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.footer .left {
+  display: flex;
+  flex-direction: column;
+
+  text-align: left;
+
+  .mainText {
+    width: 18em;
+
+    color: #fff;
+    font-family: "Gilroy-Regular";
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2rem; /* 177.778% */
+  }
+
+  .logo {
+    color: var(--wei, #fff);
+    font-family: Chronicle;
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.02rem;
+    text-transform: capitalize;
+  }
+
+  .copyRight {
+    margin-top: 7.62rem;
+
+    color: #fff;
+    font-family: "Gilroy";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 2rem; /* 177.778% */
+    opacity: 0.5;
+  }
+}
+
+.footer .right {
+  z-index: 10;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-left: 12rem;
+  text-align: left;
+
+  .header {
+    color: var(--accent, #fbd784);
+    font-family: Gilroy-Medium;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 2rem; /* 133.333% */
+  }
+  li {
+    list-style-type: none;
+    margin-top: 1.5rem;
+    color: #fff;
+    font-family: Gilroy-Medium;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 300;
+  }
+
+  .onBlog {
+    width: 12rem;
+  }
+  .onMntn {
+    width: 12rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .right .social {
+    margin: auto;
+  }
+}
