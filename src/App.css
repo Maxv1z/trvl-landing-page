@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.App {
+  position: relative;
+}
+
+.hero-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
