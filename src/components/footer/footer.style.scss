@@ -2,11 +2,10 @@
   margin-top: 12.5rem;
   padding-bottom: 7.5em;
 
-  width: 91.375rem;
+  width: 100%;
 }
 
 .footer-container {
-  max-width: 100%;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -57,8 +56,9 @@
   z-index: 10;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  width: 35.5rem;
 
-  margin-left: 12rem;
+  margin-left: 10.2rem;
   text-align: left;
 
   .header {
@@ -89,10 +89,11 @@
 
 @media screen and (max-width: 640px) {
   .footer-container {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, 1fr);
   }
 
-  .right .social {
-    margin: auto;
+  .footer .right {
+    margin-left: auto;
+    text-align: center;
   }
 }

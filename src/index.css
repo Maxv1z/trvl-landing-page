@@ -8,11 +8,9 @@
 }
 
 body, html {
-	margin: 0;
 	height: 100%;
-	background: var(--bg, #0B1D26);
+	background: var(--bg, #0B1D26);	
 }
-  
 
 body {
   margin: 0;
@@ -21,8 +19,5 @@ body {
 }
 
 
-.hero-container {
-	position: relative;
-  }
 
  

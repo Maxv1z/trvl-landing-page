@@ -6,13 +6,16 @@
       rgba(11, 29, 38, 1) 100%
     ),
     url("background2.png");
-  height: 135vh;
+  height: 120vh; /* Updated */
   width: 100%;
-  background-position: center;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   z-index: 1;
+
+  display: flex;
+  justify-content: center;
 }
 
 .hero-text {

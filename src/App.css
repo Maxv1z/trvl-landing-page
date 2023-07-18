@@ -1,20 +1,18 @@
 .App {
   text-align: center;
-}
-
-.App {
   position: relative;
 }
 
-.hero-container {
+.navbar-container {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 2;
+  z-index: 9999;
 }
 
 .all-content {
+  z-index: 2;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 12.5rem;
