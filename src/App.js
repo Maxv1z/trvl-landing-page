@@ -18,7 +18,7 @@ function App() {
   };
 
   const textBeforeStyle = {
-    left: '9.8rem',
+    left: '-3.5rem',
   };
 
   const textStyle = {
@@ -26,7 +26,7 @@ function App() {
   };
 
   const pictureStyle = {
-    margin: 'auto auto auto -9rem',
+    margin: 'auto auto auto 0.5rem',
   };
 
   const sectionHeights = [ // Define the custom heights for each section in pixels
@@ -103,8 +103,8 @@ function App() {
           side1="right"
           side2="left"
         />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }

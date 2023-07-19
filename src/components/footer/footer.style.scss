@@ -1,8 +1,6 @@
 .footer {
-  margin-top: 12.5rem;
+  margin: 10rem 14.5rem 7.5rem 14.5rem;
   padding-bottom: 7.5em;
-
-  width: 100%;
 }
 
 .footer-container {
@@ -58,7 +56,7 @@
   grid-template-columns: repeat(2, 1fr);
   width: 35.5rem;
 
-  margin-left: 10.2rem;
+  margin-left: 9rem;
   text-align: left;
 
   .header {
@@ -84,16 +82,17 @@
   }
   .onMntn {
     width: 12rem;
+    margin-left: 8rem;
   }
 }
 
-@media screen and (max-width: 640px) {
-  .footer-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+// @media screen and (max-width: 640px) {
+//   .footer-container {
+//     grid-template-columns: repeat(1, 1fr);
+//   }
 
-  .footer .right {
-    margin-left: auto;
-    text-align: center;
-  }
-}
+//   .footer .right {
+//     margin-left: auto;
+//     text-align: center;
+//   }
+// }
