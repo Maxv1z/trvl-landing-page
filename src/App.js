@@ -33,7 +33,7 @@ function App() {
     { section: 1, height: 990 },
     { section: 2, height: 1900 },
     { section: 3, height: 2600 },
-    { section: 4, height: 3400 },
+    { section: 4, height: 3200 },
   ];
 
   const [activeSection, setActiveSection] = useState(0);
