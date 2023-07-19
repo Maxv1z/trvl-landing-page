@@ -1,0 +1,56 @@
+.track-container {
+  height: 13rem;
+  position: fixed;
+  top: 32vh;
+  right: 5rem; /* Adjust the right position to fit your layout */
+  display: grid;
+  grid-template-columns: 2fr 0.1rem; /* Sidebar and Stick div with 1px separation */
+  grid-gap: 2rem; /* Add a gap of 2rem between the Sidebar and Stick div */
+  z-index: 9999;
+}
+
+.sidebar {
+  height: 100%;
+  width: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Align counter elements to the right */
+  z-index: 9999;
+
+  color: #fff;
+  font-family: "Gilroy-Regular";
+  font-weight: 300;
+  font-size: 0.5rem;
+
+  .counter {
+    height: 25%; /* Each counter element takes 25% of .track-container height */
+    margin-bottom: 0.7rem;
+    transition: all 0.3s cubic-bezier(0.12, 0.56, 1, 0.42);
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &.start {
+      font-size: 0.6rem;
+    }
+
+    &.active {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.stick {
+  width: 2px;
+  height: 13rem;
+  background-color: #5b5b5b;
+  z-index: -1;
+  display: flex;
+  overflow: hidden;
+
+  .stick-segment {
+    width: 100%;
+    background-color: white;
+    transition: height 0.3s ease-in-out;
+  }
+}
