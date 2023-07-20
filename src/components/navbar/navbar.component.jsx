@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import "./navbar.style.scss";
 
 const accountSvg = (

@@ -30,8 +30,8 @@
     margin-left: 0.2em;
 
     color: var(--accent, #fbd784);
-    font-family: "Gilroy";
-    font-size: 1rem;
+    font-family: "Gilroy-Medium";
+    font-size: 1.125rem;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
@@ -57,6 +57,8 @@
     font-weight: 300;
     line-height: 6.25rem; /* 113.636% */
     text-transform: capitalize;
+
+    margin-top: 1.5rem;
   }
 
   .bottom-text {
@@ -79,20 +81,20 @@
 
 .social-buttons {
   position: absolute;
-  left: 5rem;
-  top: 21rem;
+  left: 5.5rem;
+  top: 22.5rem;
   display: flex;
   flex-direction: column;
 
   a {
     display: inline-flex;
     text-decoration: none;
-    font-size: 1.125rem;
+    font-size: 1.3rem;
     color: #fff;
     justify-content: center;
     align-items: center;
     position: relative;
-    margin-top: 1rem;
+    margin-top: 1.2rem;
   }
 
   p {
