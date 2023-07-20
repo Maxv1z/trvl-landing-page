@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 import "./content.style.scss";
 
@@ -30,31 +32,58 @@ const Content = ({
   textStyle,
   pictureStyle,
 }) => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Only trigger the animation once when the element comes into view
+    threshold: 0.2, // Adjust the value based on when you want the animation to start
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  const variants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+    hidden: {
+      y: 75,
+      opacity: 0,
+    },
+  };
   return (
     <>
-      <div class="container" style={reverseContainer}>
-        <div className={`${side2}`}>
-          <div className="text-before" style={textBeforeStyle}>
-            {textBefore}
+      <div className="container" style={reverseContainer}>
+        <motion.div ref={ref} initial="hidden" animate={controls} variants={variants}>
+          <div className={`${side2}`}>
+            <div className="text-before" style={textBeforeStyle}>
+              {textBefore}
+            </div>
+            <div className="text">
+              <p className="text-above" style={textStyle}>
+                <i className="palka">{palka}</i>
+                {textAbove}
+              </p>
+              <p className="header" style={textStyle}>
+                {header}
+              </p>
+              <p className="main-text" style={textStyle}>
+                {mainText}
+              </p>
+              <p className="bottom-text" style={textStyle}>
+                read more <i class="arrow">{rightArrow}</i>
+              </p>
+            </div>
           </div>
-          <div class="text">
-            <p class="text-above" style={textStyle}>
-              <i class="palka">{palka}</i>
-              {textAbove}
-            </p>
-            <p class="header" style={textStyle}>
-              {header}
-            </p>
-            <p class="main-text" style={textStyle}>
-              {mainText}
-            </p>
-            <p class="bottom-text" style={textStyle}>
-              read more <i class="arrow">{rightArrow}</i>
-            </p>
-          </div>
-        </div>
+        </motion.div>
         <div className={`${side1}`}>
-          <div class="picture" style={pictureStyle}>
+          <div className="picture" style={pictureStyle}>
             <img src={image} alt="" />
           </div>
         </div>

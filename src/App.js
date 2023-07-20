@@ -59,9 +59,6 @@ function App() {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(`Active Section: ${activeSection}`);
-  }, [activeSection]);
 
   return (
     <div className="App">
