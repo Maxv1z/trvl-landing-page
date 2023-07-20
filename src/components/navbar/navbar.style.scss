@@ -1,89 +1,106 @@
 header {
   display: flex;
   align-items: center;
-  margin: 3em 5em auto 5em;
   justify-content: space-between;
-  width: 110rem;
+  margin: 3em 3em auto 3em;
   height: 1.5625rem;
   padding: 0 2rem;
   color: #fff;
-}
 
-#logo {
-  font-family: "Chronicle Display";
-  font-size: 2rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  letter-spacing: 0.02rem;
-  text-transform: capitalize;
-}
-
-nav a {
-  margin: 0 1rem;
-  color: var(--textColor);
-  text-decoration: none;
-  font-size: 1.125rem;
-  font-style: normal;
-  line-height: normal;
-  font-family: "Gilroy-Medium", sans-serif;
-  font-weight: 300;
-}
-
-nav a:hover {
-  color: var(--secondaryColor);
-}
-
-header .nav-btn {
-  padding: 5px;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: var(--textColor);
-  visibility: hidden;
-  opacity: 0;
-  font-size: 1.8rem;
-}
-
-header div,
-nav {
-  display: flex;
-  align-items: center;
-}
-
-@media only screen and (max-width: 1024px) {
-  header .nav-btn {
-    visibility: visible;
-    opacity: 1;
+  .left-elements {
+    display: flex;
+    align-items: center;
+    margin-right: 2rem; /* Adjust the gap between the logo and centered elements */
   }
 
-  header nav {
-    position: fixed;
-    top: -100vh;
-    left: 0;
-    height: 100%;
-    width: 100%;
+  #logo {
+    font-family: "Chronicle Display";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.02rem;
+    text-transform: capitalize;
+  }
+
+  .center-elements {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem;
-    background-color: var(--mainColor);
-    transition: 1s;
+    flex-grow: 1;
+    margin: 0 2rem;
   }
 
-  header .responsive_nav {
-    transform: translateY(100vh);
+  .center-elements a {
+    margin: 0 1rem;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-family: Gilroy-Regular;
+    font-weight: 700;
+    position: relative;
+    transition: 0.5s;
   }
 
-  nav .nav-close-btn {
+  .center-elements a:before {
+    content: "";
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fbd784;
+    transition: 0.5s;
+    transform-origin: right;
+    transform: scaleX(0);
+    z-index: -1;
   }
 
-  nav a {
-    font-size: 1.5rem;
+  .center-elements a:hover {
+    transform: scale(1.3);
+    opacity: 1;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .center-elements:hover a:not(:hover) {
+    filter: blur(5px); /* Add blur effect on other elements when hovering over .center-elements */
+  }
+
+  .center-elements a:hover:before {
+    transition: transform 0.5s;
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+
+  .right-elements {
+    display: flex;
+    align-items: center;
+  }
+
+  #account {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-style: normal;
+    line-height: normal;
+    font-family: "Gilroy-Medium", sans-serif;
+    font-weight: 300;
+
+    .account-svg {
+      position: relative;
+      top: 0.4rem;
+    }
+
+    &:hover {
+      color: rgb(172, 172, 172);
+      transition: 0.7s;
+    }
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .center-elements {
+      display: none; /* Hide the centered elements on smaller screens */
+    }
   }
 }
