@@ -8,7 +8,7 @@ Welcome to TRVL Landing Page, a React-based web application for showcasing hikin
 2. [Project Website](#project-website-link)                          
 3. [Project Structure](#project-structure)
 4. [Dependencies](#dependencies)
-5. [Strugles](#strugles)
+5. [Strugles and Solutions](#strugles-and-solutions)
 
 ## Description
 
@@ -22,7 +22,7 @@ This project was build with an idea to upgrade myself as a future Front-end prog
 ---
 
 ## Project Structure
-```
+```jsx
 📁 src/
  ├─ 📁 components/
  │   ├─ 📁 content/
@@ -59,19 +59,78 @@ The TRVL Landing Page project relies on the following external packages and libr
 - [framer-motion](https://www.npmjs.com/package/framer-motion) - A library for animations and transitions in React applications. Here it was used for text appear on scroll animation. Later I'm planing to study it fully and use in all of the projects.
 - [sass](https://www.npmjs.com/package/sass) - A popular CSS extension language, which allows writing styles in parent styles, what is more convinient and for what mainly was used.
 
-# Strugles
+# Strugles and Solutions
 There are some thigs, which were the hardest to implement and I'd like to show solved it
-## Problems
 - Section-track sidebar
+
+  ![image](https://github.com/Maxv1z/trvl-landing-page/assets/122612827/21c8fd05-ada1-4a93-a277-7dd6677a0c97)
+  
+  I've been doing something like this for the first time and it took me some time to think, how to code this and how to exaplain it to ChatGpt, it can help me.
+  The solution I've came up with was to track section, since I had the logic, which, briefly, was tracking the height of the section's num using exact amount of px-s. I looks like this:
+  ```jsx
+  const sectionHeights = [ // Define the custom heights for each section in pixels
+    { section: 1, height: 990 },
+    { section: 2, height: 1900 },
+    { section: 3, height: 2600 },
+    { section: 4, height: 3200 },
+  ];
+  ```
+  So these section values were the key things to lean on. So to track which section is active and to make it work in both ways (scrolling up and down), I used *useEffect* hook to change the state of the var activeSection and also went through the sectionHeights array to check in what "zone/section" user in. In object sectionHeight I stored the section number and its heigts, as it was shown before. So having this dataa we check where we are:
+  ```jsx
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+      let currentSection = 0;
+      for (let i = 0; i < sectionHeights.length; i++) {
+        if (scrollPosition >= sectionHeights[i].height) {
+          currentSection = sectionHeights[i].section;
+        }
+      }
+
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  ```
+  Already having the track of the component, we can map through these sections and style them, accordingly to our design. It was done so:
+  ```jsx
+  <div className="track-container">
+      <div className="sidebar">
+        {[0, 1, 2, 3].map((section) => (
+          <div
+            key={section}
+            className={`counter ${activeSection === section ? "active" : ""} ${
+              section === 0 ? "start" : ""
+            }`}
+          >
+            <h1>{section === 0 ? "Start" : "0" + section}</h1>
+          </div>
+        ))}
+      </div>
+  ```
+  Also we need that vertical progress bar on the right side, so it fills the block, depending on the section. It was done by using activeSection value and adding value to it, to make fill 25%, 50%, 75% and 100% of the progress bar.
+  ```jsx
+  <div className="stick">
+        <div className="stick-segment" style={{ height: `${25 + 25 * activeSection}%` }}></div>
+  </div>
+  ```
+  
+
 - Reusable Content component
   The problem here was, that the design have the only element with reversed view (image is on the left side and the text on the right). The idea to have three or at least two different components to make it look good is not bad, but it was interesting for me, how I can do it only using one component. The obvius thought was, that I need to paste different styles for this element and it was done by using props to this unique element. Other elements can take these props for custom component styles, but they weren't pasted there, so nothing chaged for the rest of the components.
- ```
+ ```jsx
 const Content = ({ textAbove, textBefore, mainText, header, image, side1, side2, reverseContainer, textBeforeStyle, textStyle,pictureStyle, }) => {
  ...
 }
  ```
 And every element has its own style to place it right (variable with styles entered in ***style*** ): 
-```
+```jsx
  <div className="container" style={reverseContainer}>
         <motion.div ref={ref} initial="hidden" animate={controls} variants={variants}>
           <div className={`${side2}`}>
@@ -102,8 +161,8 @@ And every element has its own style to place it right (variable with styles ente
         </div>
       </div>
 ```
-### Styles where entered like this:
-```
+### Styles where entered like this in App.js file:
+```jsx
 const reverseContainer = {
     direction: "rtl",
   };
@@ -115,6 +174,6 @@ const textStyle = {
 };
 const pictureStyle = {
     margin: 'auto auto auto 0.5rem',
-  };
+};
 ```
-
+***
