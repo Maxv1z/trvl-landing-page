@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# TRVL Landing Page 🏔️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to TRVL Landing Page, a React-based web application for showcasing hiking and outdoors-related content. This project provides a visually appealing interface to engage users and help them plan their hiking adventures. 🚶‍♂️🏞️
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Description](#description)
+2. [Project Structure](#project-structure)
+3. [Dependencies](#dependencies)
+4. [Project Website](#project-website)                          
 
-### `npm start`
+## Description
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+TRVL Landing Page is a single-page application built using React, designed to offer a smooth and interactive experience for users interested in hiking. The page includes various sections that cover essential information about hiking levels, gear selection, and map reading. 🥾🌲
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This project was build with an idea to upgrade myself as a future Front-end programer, since the main idea of this position is to implement the design using code. So the same did I: I searched for design on Dribble and Figma websites and found one, that was good looking for me and which has something interesting to think about while buildng. 
+### So, that's how the initial design looks like: 
+![image](https://github.com/Maxv1z/trvl-landing-page/assets/122612827/1db28b0a-21b9-4c51-923c-24635235e394)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Project Structure
+```
+📁 src/
+ ├─ 📁 components/
+ │   ├─ 📁 content/
+ │   │   ├─ 01.png
+ │   │   ├─ 02.png
+ │   │   ├─ 03.png
+ │   │   ├─ content.style.scss
+ │   │   ├─ content.component.jsx
+ │   ├─ 📁 footer/
+ │   │   ├─ footer.style.scss
+ │   │   ├─ footer.component.jsx
+ │   ├─ 📁 hero/
+ │   │   ├─ hero.style.scss
+ │   │   ├─ hero.component.jsx
+ │   ├─ 📁 mobile/
+ │   │   ├─ mobile.style.scss
+ │   │   ├─ mobile.component.jsx
+ │   ├─ 📁 navbar/
+ │   │   ├─ navbar.style.scss
+ │   │   ├─ navbar.component.jsx
+ │   ├─ 📁 section-track/
+ │   │   ├─ section-track.style.scss
+ │   │   ├─ section-track.component.jsx
+ ├─ App.css
+ ├─ App.js
+ ├─ index.js
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The `src` folder contains various components that compose the landing page. Images and assets are stored in their respective directories. The `App.js` file serves as the main entry point for the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The TRVL Landing Page project relies on the following external packages and libraries:
+- [framer-motion](https://www.npmjs.com/package/framer-motion) - A library for animations and transitions in React applications. Here it was used for text appear on scroll animation. Later I'm planing to study it fully and use in all of the projects.
+- [sass](https://www.npmjs.com/package/sass) - A popular CSS extension language, which allows writing styles in parent styles, what is more convinient and for what mainly was used.
 
-### `npm run eject`
+## Project Website
+- [Website link ](https://trvl-landing-page.netlify.app/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
