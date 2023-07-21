@@ -18,3 +18,11 @@
   grid-gap: 12.5rem;
   margin: auto 14rem 7.5rem 14rem;
 }
+
+@media screen and (min-width: 1860px) {
+  .mobile {
+    display: none;
+  }
+}
+
+
