@@ -4,11 +4,10 @@ Welcome to TRVL Landing Page, a React-based web application for showcasing hikin
 
 ## Table of Contents
 
-1. [Description](#description)
-2. [Project Website](#project-website-link)                          
-3. [Project Structure](#project-structure)
-4. [Dependencies](#dependencies)
-5. [Strugles and Solutions](#strugles-and-solutions)
+1. [Description](#description)                        
+2. [Project Structure](#project-structure)
+3. [Dependencies](#dependencies)
+4. [Strugles and Solutions](#strugles-and-solutions)
 
 ## Description
 
@@ -18,7 +17,6 @@ This project was build with an idea to upgrade myself as a future Front-end prog
 ### So, that's how the initial design looks like: 
 ![image](https://github.com/Maxv1z/trvl-landing-page/assets/122612827/1db28b0a-21b9-4c51-923c-24635235e394)
 
-# [Project Website Link](https://trvl-landing-page.netlify.app/)
 ---
 
 ## Project Structure
