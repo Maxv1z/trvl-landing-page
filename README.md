@@ -120,8 +120,7 @@ There are some thigs, which were the hardest to implement and I'd like to show s
         <div className="stick-segment" style={{ height: `${25 + 25 * activeSection}%` }}></div>
   </div>
   ```
-  
-
+  ___
 - Reusable Content component
   The problem here was, that the design have the only element with reversed view (image is on the left side and the text on the right). The idea to have three or at least two different components to make it look good is not bad, but it was interesting for me, how I can do it only using one component. The obvius thought was, that I need to paste different styles for this element and it was done by using props to this unique element. Other elements can take these props for custom component styles, but they weren't pasted there, so nothing chaged for the rest of the components.
  ```jsx
